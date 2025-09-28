@@ -1,26 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robotics Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <h1>Your Name</h1>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<body class="bg-gray-900 text-white relative overflow-x-hidden">
+
+  <!-- Background with animated gears -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+    <svg class="absolute animate-spin-slow w-[150%] h-[150%] opacity-5"
+         viewBox="0 0 600 600">
+      <circle cx="300" cy="300" r="250" stroke="cyan" stroke-width="40" fill="none"/>
+      <circle cx="300" cy="300" r="150" stroke="deepskyblue" stroke-width="20" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6">
+    <h1 class="text-3xl font-bold tracking-wide text-cyan-400">My Portfolio</h1>
+    <button id="editBtn"
+      class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-xl transition">
+      Edit Profile
+    </button>
   </header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Show off your best work here.</p>
+  <!-- Profile -->
+  <section class="max-w-3xl mx-auto text-center mt-10">
+    <img id="profileImg" src="https://via.placeholder.com/150" alt="Profile picture of Kingdrix Otadoy"
+         class="mx-auto rounded-full border-4 border-cyan-400 shadow-lg w-40 h-40 object-cover">
+    <h2 id="profileName" class="text-4xl font-semibold mt-4">Kingdrix Otadoy</h2>
+    <p id="profileTagline" class="text-cyan-300 mt-2">Web Developer</p>
+    <p id="profileAbout" class="mt-4 text-gray-300">
+      I design innovative Websites and applications that blend creativity with functionality.
+      With a passion for technology and a keen eye for detail, I bring ideas to life through code.
+    </p>
   </section>
 
-  <footer>© 2025 Your Name</footer>
+  
+
+  <!-- Projects -->
+  <section class="max-w-5xl mx-auto mt-16 px-4">
+    <h3 class="text-2xl font-bold text-cyan-400 mb-6 text-center">Projects</h3>
+    <div id="projectGrid"
+         class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Example Project Card -->
+      <div class="project-card bg-gray-800 rounded-2xl p-4 hover:scale-105 hover:shadow-cyan-400/50 transition">
+        <h4 class="text-xl font-semibold">Projects:</h4>
+        <p class="text-gray-400 mt-2">Web Designs</p>
+        <a href="#" class="inline-block mt-4 text-cyan-300 hover:text-cyan-200">View Details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Edit Profile Modal -->
+<div id="editModal"
+     class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
+  <div class="bg-gray-800 rounded-2xl w-full max-w-md p-6 shadow-lg">
+    <h2 class="text-2xl font-bold text-cyan-400 mb-4 text-center">Edit Profile</h2>
+    <form id="editForm" class="space-y-4">
+      <div>
+        <label class="block text-sm mb-1">Name</label>
+        <input id="editName" type="text"
+               class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-cyan-400">
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Tagline</label>
+        <input id="editTagline" type="text"
+               class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-cyan-400">
+      </div>
+      <div>
+        <label class="block text-sm mb-1">About</label>
+        <textarea id="editAbout" rows="3"
+                  class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-cyan-400"></textarea>
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Profile Image</label>
+        <input id="editImage" type="file" accept="image/*"
+               class="w-full text-gray-300">
+      </div>
+
+      <div class="flex justify-between mt-6">
+        <button type="button" id="cancelEdit"
+          class="px-4 py-2 rounded-md bg-gray-600 hover:bg-gray-500">Cancel</button>
+        <button type="submit"
+          class="px-4 py-2 rounded-md bg-cyan-500 hover:bg-cyan-600">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-center text-gray-300 mt-16 p-6">
+  <p class="text-sm">
+    Contact me:
+    <a href="mailto:kingdrixo@gmail.com"
+       class="text-cyan-400 hover:text-cyan-300 underline">
+       kingdrixo@gmail.com
+    </a>
+  </p>
+  <p class="mt-2 text-xs text-gray-500">
+    © 2025 Kingdrix Otadoy. All rights reserved.
+  </p>
+</footer>
+
+  <script src="script.js  "></script>
+
 </body>
 </html>
